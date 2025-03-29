@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { searchRecipesByFilters } from "../api/spoonacular";
-import RecipeCard from "../components/RecipeCard";
+import { searchRecipesByFilter } from "../api/spoonacular";
+import { Link } from "react-router-dom";
+// import "./RecipeList.css"; // Ensure you have styles for better layout
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -9,16 +10,34 @@ const useQuery = () => {
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
   const query = useQuery();
   const diet = query.get("diet");
   const nutrient = query.get("nutrient");
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      if (!diet && !nutrient) return;
-      const result = await searchRecipesByFilters({ diet, nutrient });
-      setRecipes(result);
+      if (!diet && !nutrient) return; // No filter selected
+
+      setLoading(true);
+      setError("");
+
+      try {
+        const result = await searchRecipesByFilter({ diet, nutrient });
+        if (result.length === 0) {
+          setError("No recipes found for this category.");
+        }
+        setRecipes(result);
+      } catch (err) {
+        console.error("Error fetching recipes:", err);
+        setError("Failed to load recipes. Please try again.");
+      } finally {
+        setLoading(false);
+      }
     };
+
     fetchRecipes();
   }, [diet, nutrient]);
 
@@ -27,12 +46,26 @@ const RecipeList = () => {
       <h1 className="text-3xl font-bold mb-4">
         {diet ? `${diet} Recipes` : `${nutrient} Recipes`}
       </h1>
+
+      {loading && <p>Loading recipes...</p>}
+      {error && <p className="text-red-500">{error}</p>}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {recipes.length > 0 ? (
-          recipes.map((recipe) => <RecipeCard key={recipe.id} recipe={recipe} />)
-        ) : (
-          <p>No recipes found.</p>
-        )}
+        {recipes.map((recipe) => (
+          <Link
+            to={`/recipe/${recipe.id}`}
+            key={recipe.id}
+            className="recipe-card flex flex-col items-center bg-white border rounded-lg shadow-md p-4 hover:bg-gray-100 transition"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <img
+              src={recipe.image}
+              alt={recipe.title}
+              className="w-full h-40 object-cover rounded-md"
+            />
+            <h2 className="text-lg font-semibold mt-2">{recipe.title}</h2>
+          </Link>
+        ))}
       </div>
     </div>
   );
