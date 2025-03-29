@@ -88,18 +88,14 @@ const Home = () => {
 
       {/* Diet-Based Categories */}
       <h2 className="text-2xl font-semibold mt-10 mb-4">Explore by Diet</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {dietCategories.map((category) => (
-          <Link to={category.path} key={category.name} className="text-center">
-            <img
-              src={category.image}
-              alt={category.name}
-              className="w-32 h-32 object-cover rounded-lg shadow-md hover:opacity-80 transition"
-            />
-            <p className="mt-2 font-medium">{category.name}</p>
-          </Link>
-        ))}
-      </div>
+      <div className="diet-grid">
+      {dietCategories.map((category) => (
+    <Link to={category.path} key={category.name} className="diet-card">
+      <img src={category.image} alt={category.name} />
+      <p className="mt-2 font-medium">{category.name}</p>
+    </Link>
+    ))}
+    </div>
     </div>
   );
 };
