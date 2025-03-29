@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import './RecipeCard.css';
 
 const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
 const BASE_URL = "https://api.spoonacular.com/recipes";
