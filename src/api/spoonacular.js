@@ -9,7 +9,7 @@ export const searchRecipesByIngredients = async (ingredients) => {
     const response = await axios.get(`${BASE_URL}/findByIngredients`, {
       params: {
         ingredients: ingredients,
-        number: 10,
+        number: 1,
         apiKey: API_KEY,
       },
     });

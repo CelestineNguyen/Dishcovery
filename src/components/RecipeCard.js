@@ -46,9 +46,9 @@ const RecipeCard = () => {
       </ul>
       <p dangerouslySetInnerHTML={{ __html: recipe.summary }}></p>
 
-      <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer">
-        Full Recipe
-      </a>
+      <a href={recipe.sourceUrl} target="_blank" rel="noopener noreferrer" className="full-recipe">
+  Full Recipe
+</a>
     </div>
   );
 };

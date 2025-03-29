@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { searchRecipesByIngredients } from "../api/spoonacular";
+import "./Home.css";
 
 const dietCategories = [
   { name: "Vegan", path: "/browse?diet=vegan", image: "/images/vegan.jpg" },
@@ -42,7 +43,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold mb-4">Find Recipes</h1>
+      <h1 className="home-title">Find Recipes</h1>
 
       {/* Search Input */}
       <div className="mb-6 flex space-x-2">
@@ -71,7 +72,8 @@ const Home = () => {
           <Link
             to={`/recipe/${recipe.id}`}
             key={recipe.id}
-            className="flex flex-col items-center bg-white border rounded-lg shadow-md p-4 hover:bg-gray-100 transition"
+            className="recipecard flex flex-col items-center bg-white border rounded-lg shadow-md p-4 hover:bg-gray-100 transition"
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <img
               src={recipe.image}
@@ -82,6 +84,7 @@ const Home = () => {
           </Link>
         ))}
       </div>
+
 
       {/* Diet-Based Categories */}
       <h2 className="text-2xl font-semibold mt-10 mb-4">Explore by Diet</h2>
