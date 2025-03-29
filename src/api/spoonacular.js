@@ -5,6 +5,34 @@ const BASE_URL = "https://api.spoonacular.com/recipes";
 
 // Search recipes by ingredients
 export const searchRecipesByIngredients = async (ingredients) => {
+    if (!ingredients) return [];
+  
+    const url = `${BASE_URL}/findByIngredients?apiKey=${API_KEY}&ingredients=${encodeURIComponent(
+      ingredients
+    )}&number=1`;
+  
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data || [];
+    } catch (error) {
+      console.error("Error fetching recipes by ingredients:", error);
+      return [];
+    }
+  };
+ 
+
+export const searchRecipesByFilters = async ({ diet, nutrient }) => {
+    const apiKey = "YOUR_SPOONACULAR_API_KEY";
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=1`;
+  
+    if (diet) url += `&diet=${diet}`;
+    // if (nutrient) url += `&min${nutrient}=10`;
+  
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.results || [];
+  };
   try {
     const response = await axios.get(`${BASE_URL}/findByIngredients`, {
       params: {
