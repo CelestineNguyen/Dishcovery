@@ -5,7 +5,8 @@ import RecipeCard from "./components/RecipeCard";
 import Home from "./pages/Home"; // If you have a Home page
 import Navbar from "./components/Navbar"; // If you have a Navbar
 import About from "./pages/About"; // Import About Page
-import RecipeList from "./pages/RecipeList";
+
+
 
 const App = () => {
   return (
@@ -15,8 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/browse" element={<Browse />} />
         <Route path="/recipe/:id" element={<RecipeCard />} />
-        <Route path="/about" element={<About />} />  
-        <Route path="/recipes" element={<RecipeList />} />
+        <Route path="/about" element={<About />} />  {/* Add About Page Route */}
       </Routes>
     </Router>
   );
