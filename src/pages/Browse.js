@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import "./Browse.css"; // Ensure you have a CSS file for styling
+import "./Browse.css"; 
 
 const Browse = () => {
   const [recipes, setRecipes] = useState([]);
@@ -23,7 +23,7 @@ const Browse = () => {
 
   return (
     <div className="browse-container">
-      <h1>Browse Recipes</h1>
+      <h1 className="browse-title">Browse Recipes</h1>
       <div className="recipe-grid">
         {recipes.map((recipe) => (
           <Link to={`/recipe/${recipe.id}`} key={recipe.id} className="recipe-card">
