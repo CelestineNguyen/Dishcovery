@@ -16,11 +16,11 @@ const dietCategories = [
 const nutrientCategories = [
   { name: "High Protein", path: "/recipelist?nutrient=high-protein", image: "/images/high-protein.jpg" },
   { name: "Fiber Rich", path: "/recipelist?nutrient=fiber-rich", image: "/images/fiber-rich.jpg" },
-  { name: "Low Carb", path: "/recipelist?nutrient=low-carb", image: "/images/low-carb.jpg" },
+  { name: "Low Carb", path: "/recipelist?nutrient=low-carb", image: "/images/low-carb.webp" },
   { name: "Low Fat", path: "/recipelist?nutrient=low-fat", image: "/images/low-fat.jpg" },
-  { name: "High Iron", path: "/recipelist?nutrient=high-iron", image: "/images/high-iron.jpg" },
-  { name: "Low Sodium", path: "/recipelist?nutrient=low-sodium", image: "/images/low-sodium.jpg" },
-  { name: "Omega-3 Rich", path: "/recipelist?nutrient=omega3-rich", image: "/images/omega3-rich.jpg" },
+  { name: "High Iron", path: "/recipelist?nutrient=high-iron", image: "/images/high-iron.avif" },
+  { name: "Low Sodium", path: "/recipelist?nutrient=low-sodium", image: "/images/low-sodium.png" },
+  { name: "Omega-3 Rich", path: "/recipelist?nutrient=omega3-rich", image: "/images/omega3-rich.png" },
 ];
 
 const Home = () => {

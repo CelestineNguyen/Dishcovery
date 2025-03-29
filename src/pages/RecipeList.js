@@ -44,8 +44,12 @@ const RecipeList = () => {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-4">
-        {diet ? `${diet} Recipes` : `${nutrient} Recipes`}
-      </h1>
+  {diet
+    ? `${diet.charAt(0).toUpperCase() + diet.slice(1)} Recipes`
+    : nutrient
+    ? `${nutrient.charAt(0).toUpperCase() + nutrient.slice(1)} Recipes`
+    : "Recipes"}
+</h1>
 
       {loading && <p>Loading recipes...</p>}
       {error && <p className="text-red-500">{error}</p>}
