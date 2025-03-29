@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
-const BASE_URL = "https://api.spoonacular.com/recipes";
+// import "./Browse.css"; // Ensure you have a CSS file for styling
 
 const Browse = () => {
   const [recipes, setRecipes] = useState([]);
@@ -11,12 +9,9 @@ const Browse = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/random`, {
-          params: {
-            number: 10, // Get 10 random recipes
-            apiKey: API_KEY,
-          },
-        });
+        const response = await axios.get(
+          `https://api.spoonacular.com/recipes/random?number=12&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
+        );
         setRecipes(response.data.recipes);
       } catch (error) {
         console.error("Error fetching recipes:", error);
@@ -27,15 +22,16 @@ const Browse = () => {
   }, []);
 
   return (
-    <div>
+    <div className="browse-container">
       <h1>Browse Recipes</h1>
-      <ul>
+      <div className="recipe-grid">
         {recipes.map((recipe) => (
-          <li key={recipe.id}>
-            <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>
-          </li>
+          <Link to={`/recipe/${recipe.id}`} key={recipe.id} className="recipe-card">
+            <img src={recipe.image} alt={recipe.title} className="recipe-image" />
+            <h3>{recipe.title}</h3>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
