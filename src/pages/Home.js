@@ -4,13 +4,23 @@ import { searchRecipesByIngredients } from "../api/spoonacular";
 import "./Home.css";
 
 const dietCategories = [
-  { name: "Vegan", path: "/browse?diet=vegan", image: "/images/vegan.jpg" },
-  { name: "Vegetarian", path: "/browse?diet=vegetarian", image: "/images/vegetarian.jpg" },
-  { name: "Keto", path: "/browse?diet=keto", image: "/images/keto.jpg" },
-  { name: "Paleo", path: "/browse?diet=paleo", image: "/images/paleo.jpg" },
-  { name: "Pescatarian", path: "/browse?diet=pescatarian", image: "/images/pescatarian.jpg" },
-  { name: "Dairy-Free", path: "/browse?diet=dairy-free", image: "/images/dairy-free.jpg" },
-  { name: "Gluten-Free", path: "/browse?diet=gluten-free", image: "/images/gluten-free.jpg" },
+  { name: "Vegan", path: "/recipelist?diet=vegan", image: "/images/vegan.jpg" },
+  { name: "Vegetarian", path: "/recipelist?diet=vegetarian", image: "/images/vegetarian.jpg" },
+  { name: "Keto", path: "/recipelist?diet=keto", image: "/images/keto.jpg" },
+  { name: "Paleo", path: "/recipelist?diet=paleo", image: "/images/paleo.jpg" },
+  { name: "Pescatarian", path: "/recipelist?diet=pescatarian", image: "/images/pescatarian.jpg" },
+  { name: "Dairy-Free", path: "/recipelist?diet=dairy-free", image: "/images/dairy-free.jpg" },
+  { name: "Gluten-Free", path: "/recipelist?diet=gluten-free", image: "/images/gluten-free.jpg" },
+];
+
+const nutrientCategories = [
+  { name: "High Protein", path: "/recipelist?nutrient=high-protein", image: "/images/high-protein.jpg" },
+  { name: "Fiber Rich", path: "/recipelist?nutrient=fiber-rich", image: "/images/fiber-rich.jpg" },
+  { name: "Low Carb", path: "/recipelist?nutrient=low-carb", image: "/images/low-carb.jpg" },
+  { name: "Low Fat", path: "/recipelist?nutrient=low-fat", image: "/images/low-fat.jpg" },
+  { name: "High Iron", path: "/recipelist?nutrient=high-iron", image: "/images/high-iron.jpg" },
+  { name: "Low Sodium", path: "/recipelist?nutrient=low-sodium", image: "/images/low-sodium.jpg" },
+  { name: "Omega-3 Rich", path: "/recipelist?nutrient=omega3-rich", image: "/images/omega3-rich.jpg" },
 ];
 
 const Home = () => {
@@ -20,9 +30,9 @@ const Home = () => {
   const [error, setError] = useState("");
 
   const handleSearch = async () => {
-    if (!query.trim()) return; // Prevent empty search
+    if (!query.trim()) return;
     setLoading(true);
-    setError(""); // Reset error message
+    setError("");
 
     try {
       console.log("Searching for recipes with:", query);
@@ -66,7 +76,7 @@ const Home = () => {
       {/* Error Message */}
       {error && <p className="text-red-500">{error}</p>}
 
-      {/* Recipe List with Button-like Style */}
+      {/* Recipe List */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {recipes.map((recipe) => (
           <Link
@@ -85,17 +95,27 @@ const Home = () => {
         ))}
       </div>
 
-
-      {/* Diet-Based Categories */}
+      {/* Diet Categories */}
       <h2 className="text-2xl font-semibold mt-10 mb-4">Explore by Diet</h2>
       <div className="diet-grid">
-      {dietCategories.map((category) => (
-    <Link to={category.path} key={category.name} className="diet-card">
-      <img src={category.image} alt={category.name} />
-      <p className="mt-2 font-medium">{category.name}</p>
-    </Link>
-    ))}
-    </div>
+        {dietCategories.map((category) => (
+          <Link to={category.path} key={category.name} className="diet-card">
+            <img src={category.image} alt={category.name} />
+            <p className="mt-2 font-medium">{category.name}</p>
+          </Link>
+        ))}
+      </div>
+
+      {/* Nutrient-Based Categories */}
+      <h2 className="text-2xl font-semibold mt-10 mb-4">Explore by Nutrient</h2>
+      <div className="diet-grid">
+        {nutrientCategories.map((category) => (
+          <Link to={category.path} key={category.name} className="diet-card">
+            <img src={category.image} alt={category.name} />
+            <p className="mt-2 font-medium">{category.name}</p>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
