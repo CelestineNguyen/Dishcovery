@@ -9,11 +9,10 @@ export const searchRecipesByIngredients = async (ingredients) => {
     const response = await axios.get(`${BASE_URL}/findByIngredients`, {
       params: {
         ingredients: ingredients,
-        number: 2, // change this to change the number of displayed images
+        number: 10,
         apiKey: API_KEY,
       },
     });
-    console.log("Raw API Response:", response.data); // Debugging API response
     return response.data;
   } catch (error) {
     console.error("Error fetching recipes:", error);
