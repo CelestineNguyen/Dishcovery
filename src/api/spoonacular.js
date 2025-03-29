@@ -20,7 +20,7 @@ export const searchRecipesByIngredients = async (ingredients) => {
       return [];
     }
   };
-  
+ 
 
 export const searchRecipesByFilters = async ({ diet, nutrient }) => {
     const apiKey = "YOUR_SPOONACULAR_API_KEY";
@@ -33,6 +33,21 @@ export const searchRecipesByFilters = async ({ diet, nutrient }) => {
     const data = await response.json();
     return data.results || [];
   };
+  try {
+    const response = await axios.get(`${BASE_URL}/findByIngredients`, {
+      params: {
+        ingredients: ingredients,
+        number: 2, // change this to change the number of displayed images
+        apiKey: API_KEY,
+      },
+    });
+    console.log("Raw API Response:", response.data); // Debugging API response
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching recipes:", error);
+    return [];
+  }
+};
 
 // Get detailed recipe information
 export const getRecipeDetails = async (id) => {
