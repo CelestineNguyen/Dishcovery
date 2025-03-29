@@ -44,9 +44,12 @@ const teamMembers = [
   },
 ];
 
-// Inline styles
 const styles = {
-  container: { padding: "20px", textAlign: "center" },
+  container: { 
+    padding: "20px", 
+    textAlign: "center", 
+    color: "#224214"  
+  },
   teamContainer: { display: "flex", justifyContent: "center", gap: "20px" },
   card: { padding: "15px", borderRadius: "10px", background: "#f4f4f4", textAlign: "center" },
   image: { width: "100px", height: "100px", borderRadius: "50%" },

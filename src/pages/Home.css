@@ -1,12 +1,154 @@
-.home-container {
+  .flex {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #dbdbb2;
-    padding: 20px;
   }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .p-6 {
+    padding: 1.5rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+  
+  .mt-10 {
+    margin-top: 2.5rem;
+  }
+  
+  /* Search Bar and Button */
+  input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    width: 16rem;
+  }
+  
+  button {
+    background-color: #224214;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color:  #4f6611;
+  }
+  
+  /* Error Message */
+  .text-red-500 {
+    color: #f87171;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+  
+  /* Recipe Cards */
+  .grid {
+    display: grid;
+  }
+  
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .gap-6 {
+    gap: 1.5rem;
+  }
+  
+  .bg-white {
+    background-color: white;
+  }
+  
+  .border {
+    border: 1px solid #e5e5e5;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.375rem;
+  }
+  
+  .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .hover\:bg-gray-100:hover {
+    background-color: #f7fafc;
+  }
+  
+  .transition {
+    transition: background-color 0.3s ease;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+  
+  /* Diet Categories */
+  .text-center {
+    text-align: center;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .hover\:opacity-80:hover {
+    opacity: 0.8;
+  }
+  
+  .transition {
+    transition: opacity 0.3s ease;
+  }
+  
+  .rounded-md {
+    border-radius: 0.375rem;
+  }
+  
+  .shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
   
   .home-title {
     font-size: 2.5rem;
@@ -14,48 +156,45 @@
     color: #224214;
     margin-bottom: 20px;
   }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    padding: 10px;
+
+
+  .recipecard a {
+    color: inherit; 
+    text-decoration: none !important; 
   }
   
-  .search-input {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 1.1rem;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    margin-right: 10px;
+  .recipecard a:hover {
+    text-decoration: none; 
+  }
+
+  .recipecard h2 {
+    color: black; /* Ensure it's not blue */
+    text-decoration: none; /* Remove underline */
   }
   
-  .search-button {
-    padding: 10px 20px;
-    background-color: #224214;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  /* Ensure link styling doesn't interfere */
+  .recipecard a {
+    text-decoration: none;
+    color: inherit; /* Inherit the text color from parent */
+  }
+
+  .recipecard img {
+    width: 90%; 
+    height: 180px; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto; 
   }
   
-  .search-button:hover {
-    background-color: #2980b9;
+  @media (min-width: 640px) {
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   
-  .recipe-list {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+  @media (min-width: 1024px) {
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   
