@@ -201,6 +201,23 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    text-decoration: none;
+    color: black; 
+  }
+
+  .diet-card p {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Ensure text color is not blue */
+    font-weight: 500;
+  }
+  
+  .diet-card a {
+    text-decoration: none; /* Ensure all links have no underline */
+    color: inherit; /* Inherit text color from parent */
+  }
+  
+  .diet-card a:hover {
+    text-decoration: none; /* Remove underline on hover */
   }
   
   .diet-card img {
