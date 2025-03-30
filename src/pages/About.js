@@ -1,5 +1,4 @@
 import React from "react";
-import hanna from "./images/hanna.png";
 
 const About = () => {
   return (
@@ -31,7 +30,7 @@ const teamMembers = [
   {
     name: "Hanna Chong",
     role: "Frontend Developer",
-    image: <img src={hanna} alt="hanna" />,
+    image: <img src={'${process.env.PUBLIC_URL}/images/hanna.png'} alt="hanna" />,
   },
   {
     name: "Celestine Nguyen",
