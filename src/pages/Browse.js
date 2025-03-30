@@ -10,7 +10,7 @@ const Browse = () => {
     const fetchRecipes = async () => {
       try {
         const response = await axios.get(
-          `https://api.spoonacular.com/recipes/random?number=1&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
+          `https://api.spoonacular.com/recipes/random?number=12&apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}`
         );
         setRecipes(response.data.recipes);
       } catch (error) {
