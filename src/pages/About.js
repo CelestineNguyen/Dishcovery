@@ -30,17 +30,17 @@ const teamMembers = [
   {
     name: "Hanna Chong",
     role: "Frontend Developer",
-    image: "/images/hanna.png",
+    image: <img src={`${process.env.PUBLIC_URL}/images/hanna.png`} alt="hanna" />,
   },
   {
     name: "Celestine Nguyen",
     role: "Fullstack Developer",
-    image: "/images/celestine.png",
+    image: <img src={`${process.env.PUBLIC_URL}/images/celestine.png`} alt="celestine" />,
   },
   {
     name: "Ryan Nguyen",
     role: "Backend/API Developer",
-    image: "/images/ryan.png",
+    image: <img src={`${process.env.PUBLIC_URL}/images/ryan.jpg`} alt="ryan" />,
   },
 ];
 
