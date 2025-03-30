@@ -31,19 +31,19 @@ const teamMembers = [
     name: "Hanna Chong",
     role: "Frontend Developer",
     // image: <img src={'${process.env.PUBLIC_URL}/images/hanna.png'} alt="hanna" />,
-    image: "./images/hanna.png",
+    image: "./Dishcovery/images/hanna.png",
   },
   {
     name: "Celestine Nguyen",
     role: "Fullstack Developer",
     // image: <img src={'${process.env.PUBLIC_URL}/images/celestine.png'} alt="celestine" />,
-    image: "./images/celestine.png",
+    image: "images/celestine.png",
   },
   {
     name: "Ryan Nguyen",
     role: "Backend/API Developer",
     // image: <img src={'${process.env.PUBLIC_URL}/images/ryan.jpg'} alt="ryan" />,
-    image: "./images/ryan.png"
+    image: "images/ryan.png"
   },
 ];
 
