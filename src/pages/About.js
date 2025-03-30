@@ -37,13 +37,13 @@ const teamMembers = [
     name: "Celestine Nguyen",
     role: "Fullstack Developer",
     // image: <img src={'${process.env.PUBLIC_URL}/images/celestine.png'} alt="celestine" />,
-    image: "images/celestine.png",
+    image: "./Dishcovery/images/celestine.png",
   },
   {
     name: "Ryan Nguyen",
     role: "Backend/API Developer",
     // image: <img src={'${process.env.PUBLIC_URL}/images/ryan.jpg'} alt="ryan" />,
-    image: "images/ryan.png"
+    image: "./Dishcovery/images/ryan.png"
   },
 ];
 

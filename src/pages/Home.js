@@ -4,23 +4,23 @@ import { searchRecipesByIngredients } from "../api/spoonacular";
 import "./Home.css";
 
 const dietCategories = [
-  { name: "Vegan", path: "/recipelist?diet=vegan", image: "/images/vegan.jpg" },
-  { name: "Vegetarian", path: "/recipelist?diet=vegetarian", image: "/images/vegetarian.jpg" },
-  { name: "Keto", path: "/recipelist?diet=keto", image: "/images/keto.jpg" },
-  { name: "Paleo", path: "/recipelist?diet=paleo", image: "/images/paleo.jpg" },
-  { name: "Pescatarian", path: "/recipelist?diet=pescatarian", image: "/images/pescatarian.jpg" },
-  { name: "Dairy-Free", path: "/recipelist?diet=dairy-free", image: "/images/dairy-free.jpg" },
-  { name: "Gluten-Free", path: "/recipelist?diet=gluten-free", image: "/images/gluten-free.jpg" },
+  { name: "Vegan", path: "/recipelist?diet=vegan", image: "./Dishcovery/images/vegan.jpg" },
+  { name: "Vegetarian", path: "/recipelist?diet=vegetarian", image: "./Dishcovery/images/vegetarian.jpg" },
+  { name: "Keto", path: "/recipelist?diet=keto", image: "./Dishcovery/images/keto.jpg" },
+  { name: "Paleo", path: "/recipelist?diet=paleo", image: "./Dishcovery/images/paleo.jpg" },
+  { name: "Pescatarian", path: "/recipelist?diet=pescatarian", image: "./Dishcovery/images/pescatarian.jpg" },
+  { name: "Dairy-Free", path: "/recipelist?diet=dairy-free", image: "./Dishcovery/images/dairy-free.jpg" },
+  { name: "Gluten-Free", path: "/recipelist?diet=gluten-free", image: "./Dishcovery/images/gluten-free.jpg" },
 ];
 
 const nutrientCategories = [
-  { name: "High Protein", path: "/recipelist?nutrient=high-protein", image: "/images/high-protein.jpg" },
-  { name: "Fiber Rich", path: "/recipelist?nutrient=fiber-rich", image: "/images/fiber-rich.jpg" },
-  { name: "Low Carb", path: "/recipelist?nutrient=low-carb", image: "/images/low-carb.webp" },
-  { name: "Low Fat", path: "/recipelist?nutrient=low-fat", image: "/images/low-fat.jpg" },
-  { name: "High Iron", path: "/recipelist?nutrient=high-iron", image: "/images/high-iron.avif" },
-  { name: "Low Sodium", path: "/recipelist?nutrient=low-sodium", image: "/images/low-sodium.png" },
-  { name: "Omega-3 Rich", path: "/recipelist?nutrient=omega3-rich", image: "/images/omega3-rich.png" },
+  { name: "High Protein", path: "/recipelist?nutrient=high-protein", image: "./Dishcovery/images/high-protein.jpg" },
+  { name: "Fiber Rich", path: "/recipelist?nutrient=fiber-rich", image: "./Dishcovery/images/fiber-rich.jpg" },
+  { name: "Low Carb", path: "/recipelist?nutrient=low-carb", image: "./Dishcovery/images/low-carb.webp" },
+  { name: "Low Fat", path: "/recipelist?nutrient=low-fat", image: "./Dishcovery/images/low-fat.jpg" },
+  { name: "High Iron", path: "/recipelist?nutrient=high-iron", image: "./Dishcovery/images/high-iron.avif" },
+  { name: "Low Sodium", path: "/recipelist?nutrient=low-sodium", image: "./Dishcovery/images/low-sodium.png" },
+  { name: "Omega-3 Rich", path: "/recipelist?nutrient=omega3-rich", image: "./Dishcovery/images/omega3-rich.png" },
 ];
 
 const Home = () => {
